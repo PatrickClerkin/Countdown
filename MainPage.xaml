@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Countdown1.MainPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackLayout Grid.Row="0" Orientation="Horizontal" HorizontalOptions="Center" Margin="0,20,0,0">
+            <Label Text="Player 1 Score: " FontSize="20" VerticalOptions="Center"/>
+            <Label x:Name="Player1ScoreLabel" Text="0" FontSize="20" VerticalOptions="Center"/>
+            <Label Text="  Player 2 Score: " FontSize="20" VerticalOptions="Center" Margin="20,0,0,0"/>
+            <Label x:Name="Player2ScoreLabel" Text="0" FontSize="20" VerticalOptions="Center"/>
+            <Label Text="  Round: " FontSize="20" VerticalOptions="Center" Margin="20,0,0,0"/>
+            <Label x:Name="RoundLabel" Text="1" FontSize="20" VerticalOptions="Center"/>
+        </StackLayout>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <StackLayout Grid.Column="0" VerticalOptions="Center" Spacing="10">
+                <Label Text="Letters:" FontSize="24" HorizontalOptions="Center"/>
+                <Grid x:Name="LettersContainer">
+                    <Label x:Name="LettersLabel" Text="" FontSize="36" HorizontalOptions="Center"/>
+                </Grid>
+                <Entry x:Name="WordInputEntry" WidthRequest="200" FontSize="24" HorizontalOptions="Center"/>
+                <Button Text="Submit Word" WidthRequest="150" Clicked="SubmitWord_Clicked" HorizontalOptions="Center"/>
+
+                <Label Text="Numbers:" FontSize="24" HorizontalOptions="Center" Margin="0,20,0,0"/>
+                <Grid x:Name="NumbersContainer">
+                    <Label x:Name="NumbersLabel" Text="" FontSize="36" HorizontalOptions="Center"/>
+                </Grid>
+                <Entry x:Name="CalculationInputEntry" WidthRequest="200" FontSize="24" HorizontalOptions="Center"/>
+                <Button Text="Submit Calculation" WidthRequest="150" Clicked="SubmitCalculation_Clicked" HorizontalOptions="Center"/>
+            </StackLayout>
+
+            <StackLayout Grid.Column="1" VerticalOptions="Center" Margin="20,0,0,0">
+                <Label Text="Time Remaining:" FontSize="20"/>
+                <Label x:Name="TimerLabel" Text="30" FontSize="48"/>
+            </StackLayout>
+        </Grid>
+
+        <StackLayout Grid.Row="2" Orientation="Horizontal" HorizontalOptions="Center" Margin="0,20,0,20">
+            <Button Text="New Game" WidthRequest="120" Margin="0,0,10,0" Clicked="NewGame_Clicked"/>
+            <Button Text="Consonant" WidthRequest="120" Margin="0,0,10,0" Clicked="AddConsonant_Clicked"/>
+            <Button Text="Vowel" WidthRequest="120" Margin="0,0,10,0" Clicked="AddVowel_Clicked"/>
+            <Button Text="Small Number" WidthRequest="120" Margin="0,0,10,0" Clicked="AddSmallNumber_Clicked"/>
+            <Button Text="Large Number" WidthRequest="120" Clicked="AddLargeNumber_Clicked"/>
+            <Button Text="Settings" WidthRequest="120" Margin="10,0,0,0" Clicked="OnSettingsClicked"/>
+        </StackLayout>
+    </Grid>
+</ContentPage>

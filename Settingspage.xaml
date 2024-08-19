@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Countdown1.SettingsPage"
+             Title="Settings">
+    <ScrollView>
+        <VerticalStackLayout Spacing="25" Padding="30,0" VerticalOptions="Center">
+            <Label 
+                Text="Settings"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="32"
+                HorizontalOptions="Center" />
+
+            <HorizontalStackLayout>
+                <Label 
+                    Text="Dark Mode"
+                    SemanticProperties.HeadingLevel="Level2"
+                    FontSize="18"
+                    VerticalOptions="Center" />
+                <Switch 
+                    x:Name="ThemeSwitch"
+                    Toggled="OnThemeSwitchToggled"
+                    VerticalOptions="Center" />
+            </HorizontalStackLayout>
+
+            <Picker 
+                x:Name="DifficultyPicker" 
+                Title="Select Difficulty"
+                SelectedIndexChanged="OnDifficultyChanged">
+                <Picker.Items>
+                    <x:String>Easy</x:String>
+                    <x:String>Medium</x:String>
+                    <x:String>Hard</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <Label 
+                x:Name="BestScoreLabel" 
+                Text="Best Score: 0" 
+                FontSize="18" 
+                HorizontalOptions="Center" />
+
+            <Button 
+                Text="View Game History"
+                Clicked="OnViewHistoryClicked"
+                HorizontalOptions="Center" />
+
+            <Button 
+                Text="Clear Game History"
+                Clicked="OnClearHistoryClicked"
+                HorizontalOptions="Center" />
+
+            <Button 
+                Text="Back to Game"
+                Clicked="OnBackToGameClicked"
+                HorizontalOptions="Center" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

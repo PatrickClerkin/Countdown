@@ -1,0 +1,31 @@
+﻿<?xml version = "1.0" encoding = "UTF-8" ?>
+<Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Countdown1"
+             x:Class="Countdown1.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <Color x:Key="PrimaryColor">Purple</Color>
+            <Color x:Key="SecondaryColor">White</Color>
+            <Color x:Key="TertiaryColor">Black</Color>
+
+            <Style TargetType="ContentPage" ApplyToDerivedTypes="True">
+                <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource SecondaryColor}, Dark={StaticResource TertiaryColor}}" />
+            </Style>
+
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource TertiaryColor}, Dark={StaticResource SecondaryColor}}" />
+            </Style>
+
+            <Style TargetType="Entry">
+                <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource TertiaryColor}, Dark={StaticResource SecondaryColor}}" />
+                <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource SecondaryColor}, Dark={StaticResource TertiaryColor}}" />
+            </Style>
+
+            <Style TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource PrimaryColor}, Dark={StaticResource PrimaryColor}}" />
+                <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource SecondaryColor}, Dark={StaticResource SecondaryColor}}" />
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
